@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../../services/auth.service';
 
@@ -23,7 +22,6 @@ import { AuthService } from '../../services/auth.service';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatSelectModule,
     MatIconModule,
     MatSnackBarModule
   ],
@@ -33,7 +31,6 @@ import { AuthService } from '../../services/auth.service';
 export class RegisterComponent {
   registerForm: FormGroup;
   hidePassword = true;
-  roles = ['CLIENT', 'ADMIN'];
 
   constructor(
     private fb: FormBuilder,
@@ -44,14 +41,19 @@ export class RegisterComponent {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(3)]],
-      role: ['ADMIN', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
   onSubmit() {
     if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value).subscribe({
+      // Ajout automatique du rôle CLIENT
+      const formData = {
+        ...this.registerForm.value,
+        role: 'CLIENT'
+      };
+
+      this.authService.register(formData).subscribe({
         next: () => {
           this.snackBar.open('Registration successful', 'Close', { duration: 3000 });
           this.router.navigate(['/login']);
