@@ -35,10 +35,10 @@
           </mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary"
+        <button mat-raised-button
                 type="submit"
                 [disabled]="!loginForm.valid"
-                class="full-width">
+                class="full-width green-btn">
           Se connecter
         </button>
       </form>
@@ -46,7 +46,7 @@
 
     <mat-card-actions>
       <span>Vous n'avez pas de compte ? </span>
-      <a mat-button color="primary" routerLink="/register">S'inscrire</a>
+      <a mat-button color="primary" routerLink="/register" class="text">S'inscrire</a>
     </mat-card-actions>
   </mat-card>
 </div>

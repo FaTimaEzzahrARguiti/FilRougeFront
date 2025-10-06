@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   padding: 20px;
-  background: none;
+  background: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfcUOcoVWseqDEG8TnsRLARdD_m5cirim7rPFIl1zOIJOAbjXe7bU_ZFpeCOFnFmO7YHwpgDZAPIO9oDdmMOqpHHn8ttJLQP1ZA1X406f6lutcwz_TYNMfIIAly2xVxAUuHbSlKnLgYFC6tNdkJ6kFqB9UTvmag8gsgebWGqozMirIjGmoPXtkJ3_9WnBUTu3uJA7fPwTI8eoee_mm5BVRJbBkHbCAQZ3dcDdF1VYz3BUAmh4_nx1n-JyxALf1c8mEaFHify-xQUN3") center/cover no-repeat;
 }
 
 .register-card {
@@ -22,7 +22,7 @@ mat-card-header {
 mat-card-title {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #3f51b5;
+  color: #19c220;
 }
 
 .full-width {
@@ -52,3 +52,15 @@ mat-card-actions {
 mat-icon {
   color: rgba(0, 0, 0, 0.54);
 }
+
+.text{
+  color:#4caf50 !important;
+}
+.green-btn {
+  background-color: #4caf50 !important; /* Vert Material */
+  color: white !important;
+}
+.green-btn:hover {
+  background-color: #43a047 !important; /* Vert plus foncé */
+}
+

@@ -7,27 +7,6 @@
 <body>
 <div class="page">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav-container">
-      <div class="logo-nav">
-        <a class="logo" href="#">
-          <svg class="logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path></svg>
-          <span>Workspaces</span>
-        </a>
-        <nav class="nav">
-          <a href="#">Explore</a>
-          <a href="#">Create</a>
-          <a href="#">Pricing</a>
-        </nav>
-      </div>
-      <div class="actions">
-        <button class="btn">Log in</button>
-        <button class="btn btn-primary">Sign up</button>
-      </div>
-    </div>
-  </header>
-
   <!-- Hero -->
   <section class="hero">
     <div class="overlay"></div>
@@ -35,8 +14,8 @@
       <h1>Find your perfect workspace</h1>
       <p>Discover inspiring coworking spaces tailored to your needs. Book with ease and join a vibrant community of professionals.</p>
       <div class="search-bar">
-        <input type="text" placeholder="Search for a space (e.g., 'creative hub')">
-        <button class="btn btn-primary">Search</button>
+        <a [routerLink]="['/login']" class="btn btn-login">Log In</a>
+        <a [routerLink]="['/register']" class="btn btn-register">Register</a>
       </div>
     </div>
   </section>
@@ -74,12 +53,6 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
-      <div class="links">
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Terms</a>
-        <a href="#">Privacy</a>
-      </div>
       <p>© 2023 Workspaces. All rights reserved.</p>
     </div>
   </footer>

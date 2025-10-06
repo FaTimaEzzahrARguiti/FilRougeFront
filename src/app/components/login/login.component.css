@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   padding: 20px;
-  background: none;
+  background: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfcUOcoVWseqDEG8TnsRLARdD_m5cirim7rPFIl1zOIJOAbjXe7bU_ZFpeCOFnFmO7YHwpgDZAPIO9oDdmMOqpHHn8ttJLQP1ZA1X406f6lutcwz_TYNMfIIAly2xVxAUuHbSlKnLgYFC6tNdkJ6kFqB9UTvmag8gsgebWGqozMirIjGmoPXtkJ3_9WnBUTu3uJA7fPwTI8eoee_mm5BVRJbBkHbCAQZ3dcDdF1VYz3BUAmh4_nx1n-JyxALf1c8mEaFHify-xQUN3") center/cover no-repeat;
 }
 
 .login-card {
@@ -22,7 +22,7 @@ mat-card-header {
 mat-card-title {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #3f51b5;
+  color: #19c220;
 }
 
 .full-width {
@@ -51,4 +51,155 @@ mat-card-actions {
 
 mat-icon {
   color: rgba(0, 0, 0, 0.54);
+}
+/* Styles du carrousel */
+.custom-carousel {
+  max-width: 2000px;
+  max-height: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-carousel img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.carousel-caption h5 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption p {
+  font-size: 18px;
+  color: #f1f1f1;
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles des sections de la page */
+.main-container {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #19c220; /* Couleur principale d'Angular Material */
+}
+
+/* Styles des cartes (cards) des types de salles */
+.room-types-section {
+  background-color: #f8f9fa;
+}
+
+.room-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.room-card img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.room-card mat-card-header {
+  padding-bottom: 0;
+}
+
+/* Styles de la section "Pourquoi nous choisir ?" */
+.why-us-section {
+  background-color: #e9ecef;
+}
+
+.feature-card {
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.feature-card mat-icon {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.feature-card h3 {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Styles de la section CTA (Call to Action) */
+.cta-section {
+  background-color: #19c220; /* Utilisation de la couleur primaire */
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-section button {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+}
+
+/* responsive design pour la page d'accueil */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .carousel-caption
+  {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+}
+
+.green-btn {
+  background-color: #4caf50 !important; /* Vert Material */
+  color: white !important;
+}
+.green-btn:hover {
+  background-color: #43a047 !important; /* Vert plus foncé */
+}
+
+.text{
+  color:#4caf50 !important;
 }

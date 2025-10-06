@@ -7,6 +7,10 @@
   --text-light: #f5f5f5;
   --radius: 12px;
   --font-display: "Inter", sans-serif;
+  --primary-green: #388E3C; /* Vert foncé/moyen */
+  --accent-green: #5CB85C; /* Vert clair/CTA */
+  --text-light: #fff;
+  --secondary-green: #2E7D32;
 }
 
 body {
@@ -112,29 +116,84 @@ body {
   font-size: 1.2rem;
 }
 
+/* Variables (pour référence) */
+:root {
+  --primary: #17cf54;
+  --bg-light: #f6f8f6;
+  --bg-dark: #112116;
+  --text-dark: #1a1a1a;
+  --text-light: #f5f5f5;
+  --radius: 12px;
+  --font-display: "Inter", sans-serif;
+  /* Utilisation de vos variables de vert pour la cohérence */
+  --primary-green: #388E3C;
+  --accent-green: #5CB85C;
+  --secondary-green: #2E7D32;
+}
+
+/* ---------------------------------- */
+/* Mise à jour du Conteneur de Boutons (anciennement search-bar) */
+/* ---------------------------------- */
 .search-bar {
-  margin-top: 2rem;
+  /* Règle essentielle pour afficher les boutons côte à côte */
   display: flex;
-  background: white;
-  border-radius: var(--radius);
-  overflow: hidden;
+  justify-content: center; /* Centre les boutons dans la section hero */
+  gap: 15px; /* Espace entre les deux boutons */
+  margin-top: 30px; /* Ajoute un peu d'espace sous le paragraphe */
+  width: 100%; /* Prend toute la largeur disponible */
+  max-width: 450px; /* Empêche les boutons de s'étirer trop */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.search-bar input {
-  flex: 1;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-}
-
-.search-bar button {
-  padding: 1rem 2rem;
-  border: none;
-  background: var(--primary);
-  color: white;
-  font-weight: bold;
+/* ---------------------------------- */
+/* Styles de Base des Boutons (Mis à jour) */
+/* ---------------------------------- */
+.btn {
+  /* Supprime la padding de votre classe .btn précédente pour éviter les conflits */
+  /* et utilise les valeurs adaptées à un CTA */
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s;
+  border: 1px solid transparent;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  flex-grow: 1;
 }
+
+
+
+.btn-login {
+  color: var(--text-light);
+  background-color: var(--accent-green);
+  border-color: var(--text-light);
+}
+
+.btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Léger survol blanc transparent */
+}
+
+/* Bouton Register (style solide vert, le CTA principal) */
+.btn-register {
+  /* Utilisation de la couleur accentuée pour qu'il ressorte */
+  background-color: var(--accent-green);
+  color: var(--secondary-green); /* Texte vert très foncé pour un fort contraste sur le CTA vert clair */
+  border-color: var(--accent-green);
+}
+
+.btn-register:hover {
+  background-color: #4CAF50; /* Légèrement plus foncé au survol */
+  border-color: #4CAF50;
+}
+
+
+
+
+
+
 
 /* Section */
 .section {
@@ -208,4 +267,43 @@ body {
 
 .footer .links a:hover {
   color: var(--primary);
+}
+.btn {
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none; /* Important pour les liens <a> */
+  flex-grow: 1; /* Permet aux boutons de prendre de l'espace */
+}
+
+/* ---------------------------------- */
+/* Styles Spécifiques aux Boutons Log In et Register */
+/* ---------------------------------- */
+
+/* Bouton Log In (style transparent/bordure blanche) */
+.btn-login {
+  color: var(--text-light);
+  background-color: transparent;
+  border-color: var(--text-light);
+}
+
+.btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Bouton Register (style solide vert clair/CTA) */
+.btn-register {
+  color: var(--secondary-green); /* Texte vert foncé pour le contraste */
+  background-color: var(--accent-green); /* Vert clair/CTA */
+  border-color: var(--accent-green);
+}
+
+.btn-register:hover {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
 }
