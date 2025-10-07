@@ -1,1 +1,60 @@
-<p>navbar works!</p>
+<!-- Header -->
+<header class="header">
+  <div class="container nav-container">
+    <div class="logo-container">
+      <a routerLink="/home" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="24" height="24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               class="lucide lucide-layout-grid">
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <rect width="7" height="7" x="3" y="3"></rect>
+            <rect width="7" height="7" x="14" y="3"></rect>
+            <rect width="7" height="7" x="14" y="14"></rect>
+            <rect width="7" height="7" x="3" y="14"></rect>
+          </svg>
+        </div>
+        <span class="logo-text">Workspaces</span>
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+
+      <ng-container *ngIf="!isLoggedIn">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+      </ng-container>
+
+      <ng-container *ngIf="isLoggedIn">
+        <a routerLink="/space" routerLinkActive="active">Coworking Spaces</a>
+      </ng-container>
+
+      <ng-container *ngIf="isAdminUser">
+        <a routerLink="/spacelist" routerLinkActive="active">Admin Space List</a>
+        <a routerLink="/addspace" routerLinkActive="active">Add Space</a>
+      </ng-container>
+
+      <ng-container *ngIf="isLoggedIn">
+        <a (click)="logout()" style="cursor: pointer;">Logout</a>
+      </ng-container>
+    </nav>
+
+    <!-- Actions -->
+    <div class="actions">
+
+      <button class="profile-btn" *ngIf="isLoggedIn">
+        <div class="avatar">
+        <span>{{ userName }}</span>
+        </div>
+      <button class="icon-btn menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      </button>
+    </div>
+  </div>
+</header>
+

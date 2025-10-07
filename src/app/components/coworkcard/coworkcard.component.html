@@ -7,80 +7,21 @@
         <p class="subtitle">Discover your next great workspace. Human-centered design for focus and collaboration.</p>
       </div>
       <div class="spaces-grid">
-        <div class="space-card">
+        <div class="space-card" *ngFor="let space of spaces">
           <div class="card-image-wrapper">
-            <div class="card-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApemgBmzv15A_UVscvmPVsL9rWVPMWsXusoHdxBo6OrEhjQqbW-_sgEgMnumCHk0afErY_18ZYmWT-Q7NFQZVpE5dKc57qlcXNfxzybEjGBT6szgHBgGub08QVeBTefCy4WpSpu6VNvMaB3SJBqh-tpbLY1hoTih2MjVtccOEDOUqAZ7CUfkg5uLoSorx8zDSpJT7IMbMb9E-5n94aStenVQou1UdStlkCWD0RsqdQ1Yw17shM-jYIR6bRh8FzRZ2xRcomTXckYsVn");'></div>
+            <div class="card-image" [style.background-image]="'url(' + space.image + ')'"></div>
             <div class="image-overlay"></div>
           </div>
           <div class="card-body">
-            <h3 class="card-title">The Hive</h3>
-            <p class="card-description">A vibrant space for startups and freelancers.</p>
-            <button class="btn-card"  [routerLink]="['/room'] ">Afficher rooms</button>
-          </div>
-        </div>
-        <div class="space-card">
-          <div class="card-image-wrapper">
-            <div class="card-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwyk3GbdxjbiZ7Nt95fRCPOH4UnYiMR2RD99m_GYwUHV8okhNf_fPdO40M-gEFYqCDyRS1njGCLjIoNEBgPkIS2qfKLczdT9ZZ3JC2lLR6V0G5BlD580duJxZczY7zSvM4Sr90m2nHBjrX_PIxZ__S6TAwCDxI5gNFz6KyTzSIx9hu7EqmlyF0Q2HyVcC2MNBLOHoEiJYTxAckNtLHdfwbUH-6kiu_OeNy2NCem2Y0793axJ7gtD9eCa8iGCxjDlf_8pdAEee1CHzL");'></div>
-            <div class="image-overlay"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Innovation Hub</h3>
-            <p class="card-description">Modern facilities for innovative teams.</p>
-            <button class="btn-card">Afficher rooms</button>
-          </div>
-        </div>
-        <div class="space-card">
-          <div class="card-image-wrapper">
-            <div class="card-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCROQM2I2hTR4W8TK5reOgSw3xiMk0iTimfmSfhfXtiONI6qjhXdDfsIF5h5dYMjTvz6IwuNzheYoFDBYZOzZa58gQ_QV2hZSNKhAEdIXPQPV_Qc2iyB1Wf8Weit_HK0t0us58ymPjnk5oZgvSwHmjybrkLvginqi5JhmDK-xf996EMX2J1mOmkAtP0KukHLCtASbj0WPAWgrfbN77qXW8X12Jo7dXdB45VG8zUw8MGxUwky4LUW2pHYDGuF3cBHKaYGQ7R3n7AjTH_");'></div>
-            <div class="image-overlay"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Creative Corner</h3>
-            <p class="card-description">Inspiring environment for creative professionals.</p>
-            <button class="btn-card">Afficher rooms</button>
-          </div>
-        </div>
-        <div class="space-card">
-          <div class="card-image-wrapper">
-            <div class="card-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrzxHG7hwcyUHSjVq53vjUtvoka7-DUpIaIM2k4BidGF_Qw5UysY6-KKDXf5rwiuFGGLMCE-DoerhKqy-bOQIvz8_Yl82yyrpcfLSAOY97LpSh8vI_j1vAt91nXQOkP4gpjqe-dycAIhUCYFvFMiX_eo1idiSNtZdblaIWb5Bv8TA-LlZrGGu1oREeee5vPvhJ5-WXTTw3wfbdTQ6fcrKTxTzys_L_CLjDcg8kmr6NcukqjlyzweArJWajWxIkYu4OpT0bBH346YR7");'></div>
-            <div class="image-overlay"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Tech Nexus</h3>
-            <p class="card-description">Cutting-edge tech-focused workspace.</p>
-            <button class="btn-card">Afficher rooms</button>
-          </div>
-        </div>
-        <div class="space-card">
-          <div class="card-image-wrapper">
-            <div class="card-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0ZqFappROiA15jEatDBfScJJivO2k7lHLP7KP5YrUYtlG6HlDd8J7u_jxmRY0y3ANJqEAyb_eunh3VmAXfNvGq7-cCpV-F9o5N7ow8lyE-Y0htCcI0hLhFHUngiyhjRtWvewmuO-ILiWgxY7eZjpa0zHsGtwdlW1bFmio_k3TJrFa4O48JkWLGd2m3AGfSe70g_6dgTH9rkO7wqEfjm2FTj68P-ZdDAJx5hAsWRO5KdnK9hOjv3LlQl6iBe6L6-yVL3MemEq1rJ6D");'></div>
-            <div class="image-overlay"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Startup Studio</h3>
-            <p class="card-description">Ideal for early-stage companies.</p>
-            <button class="btn-card">Afficher rooms</button>
-          </div>
-        </div>
-        <div class="space-card">
-          <div class="card-image-wrapper">
-            <div class="card-image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBG3efrOvoNSgZKYPj1ij3AdFRw9OHBFCmv-Yx-YbqrCCIT_oZC5FiOoO9YiYuYlZPSb_jCEUVZofgiB0r8Hhb83sm9FaABMeUKe5H7dPcuVFHB6hrYBVQwodlOL2NJ3TolhA9Iji_BSF_b649LKmKlnvTyCDdWlMp-64LBbxnJgsr-42Z55xaxzPaFwmsQAvv_jRU901e8mPmtAc_7e5keC1z5SESK0TQub2lK-JXxrT_eJ5ntL35TyNzYapt2I74xEW-lBmk5OGBC");'></div>
-            <div class="image-overlay"></div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Collaborative Canvas</h3>
-            <p class="card-description">A space designed for collaboration and teamwork.</p>
-            <button class="btn-card">Afficher rooms</button>
+            <h3 class="card-title">{{ space.name }}</h3>
+            <p class="card-description">{{ space.description }}</p>
+            <button class="btn-card" [routerLink]="['/space', space.id, 'room']">Afficher rooms</button>
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="main-footer">
-    <div class="container footer-content">
-      <p>© 2024 CoWork. All rights reserved.</p>
-    </div>
-  </footer>
+
 </body>
 

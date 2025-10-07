@@ -1,56 +1,30 @@
-<div class="table-container">
-  <!-- Titre au-dessus aligné à droite -->
+<div class="container">
+  <h2>Coworking Spaces</h2>
   <div class="add-button-wrapper">
-    <button class="btn-add">+ Ajouter un espace</button>
+    <button class="btn-add" [routerLink]="['/addspace']">+ Ajouter un espace</button>
   </div>
-
-  <table class="table table-striped custom-table">
+  <table class="table">
     <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">Action</th>
-    </tr>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>
-        <button class="btn-action btn-delete">Supprimer</button>
-        <button class="btn-action btn-edit">Modifier</button>
-        <button class="btn-action btn-view">Afficher rooms</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>
-        <button class="btn-action btn-delete">Supprimer</button>
-        <button class="btn-action btn-edit">Modifier</button>
-        <button class="btn-action btn-view">Afficher rooms</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>
-        <button class="btn-action btn-delete">Supprimer</button>
-        <button class="btn-action btn-edit">Modifier</button>
-        <button class="btn-action btn-view" [routerLink]="['/roomlist']">Afficher rooms</button>
-      </td>
-    </tr>
+      <tr *ngFor="let space of spaces">
+        <td><img [src]="space.image" alt="space.name" class="space-image"></td>
+        <td>{{ space.name }}</td>
+        <td>{{ space.address }}</td>
+        <td>{{ space.description }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="updateSpace(space.id!)">Update</button>
+          <button class="btn btn-danger" (click)="deleteSpace(space.id!)">Delete</button>
+          <button class="btn-action btn-view" [routerLink]="['/space', space.id, 'rooms']">Afficher rooms</button>
+        </td>
+      </tr>
     </tbody>
   </table>
-
-  <!-- Bouton Ajouter aligné à droite -->
-
 </div>

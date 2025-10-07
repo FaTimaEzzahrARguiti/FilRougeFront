@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Green Room - Simple Version</title>
+  <title>{{ coworkingSpace?.name }} - Rooms</title>
   <style>
     /* Variables */
     :root {
@@ -136,40 +136,31 @@
 
 
 <main>
-  <h1>The Green Room</h1>
-  <p>123 Green Avenue, Suite 100, San Francisco, CA 94103</p>
+  <h1 *ngIf="coworkingSpace">{{ coworkingSpace.name }}</h1>
+  <p *ngIf="coworkingSpace">{{ coworkingSpace.address }}</p>
 
   <section>
     <h2>Available Rooms</h2>
     <div class="room-grid">
-      <div class="room-card">
-        <div class="room-image" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxus5cY1t4DeYeQ5NWgZZDnnrUvdddKtSXODKkAUlsQgq1cAbtbDxwT-GwktAmSQFeQZiY4Ux3-G36IRVa8FuD-YbzcC5k8y-bbwj4PeRrlSPbcykUre0Mw9YMH6-rJROwolvEQG01iwggEGWejqRZPda2PZGW-0-kZviorznbLNGe2GWteTDHzv8XeEOPwd_Diw9Vhj_8qZ6V0mH5ga-V19sV6CtE695GNsI_Sr_flHhnF4BkqYFmzReQZqji7piwqcbml0gLC1XA');"></div>
+      <div class="room-card" *ngFor="let room of rooms">
+        <div class="room-image" [style.background-image]="'url(' + room.image + ')'"></div>
         <div class="room-body">
-          <div class="room-title">The Focus Pod</div>
-          <div class="room-desc">A quiet, private space perfect for individual deep work. Equipped with an ergonomic chair and a large monitor.</div>
-          <div class="room-info">1-2 People • 80 sqft • $50/day</div>
-          <button class="btn-card">Réserver</button>
-        </div>
-      </div>
-
-      <div class="room-card">
-        <div class="room-image" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxus5cY1t4DeYeQ5NWgZZDnnrUvdddKtSXODKkAUlsQgq1cAbtbDxwT-GwktAmSQFeQZiY4Ux3-G36IRVa8FuD-YbzcC5k8y-bbwj4PeRrlSPbcykUre0Mw9YMH6-rJROwolvEQG01iwggEGWejqRZPda2PZGW-0-kZviorznbLNGe2GWteTDHzv8XeEOPwd_Diw9Vhj_8qZ6V0mH5ga-V19sV6CtE695GNsI_Sr_flHhnF4BkqYFmzReQZqji7piwqcbml0gLC1XA');"></div>
-        <div class="room-body">
-          <div class="room-title">The Collaboration Hub</div>
-          <div class="room-desc">Dynamic area with a large whiteboard and presentation screen, ideal for team brainstorming and meetings.</div>
-          <div class="room-info">4-6 People • 200 sqft • $120/day</div>
+          <div class="room-title">{{ room.name }}</div>
+          <div class="room-desc">{{ room.description }}</div>
+          <div class="room-info">{{ room.capacity }} • {{ room.price }}dh/day • {{ room.isAvailable ? 'Available' : 'Not Available' }}</div>
           <button class="btn-card">Réserver</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>About this space</h2>
-    <p>Welcome to The Green Room, a vibrant coworking space designed for productivity and collaboration. Natural light, ergonomic furniture, and flexible workspaces help you thrive.</p>
+  <section *ngIf="coworkingSpace">
+    <h2>About {{ coworkingSpace.name }}</h2>
+    <p>{{ coworkingSpace.description }}</p>
   </section>
 
 </main>
 
 </body>
 </html>
+

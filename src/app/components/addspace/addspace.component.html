@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Ajouter un Coworking Space</h2>
+
+  <form [formGroup]="spaceForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Nom</label>
+      <input type="text" formControlName="name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label>Adresse</label>
+      <input type="text" formControlName="address" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label>Description</label>
+      <textarea formControlName="description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Image</label>
+      <input type="text" formControlName="image" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="spaceForm.invalid">
+      Ajouter    </button>
+  </form>
+
+  <div *ngIf="successMsg" class="alert alert-success mt-3">{{ successMsg }}</div>
+  <div *ngIf="errorMsg" class="alert alert-danger mt-3">{{ errorMsg }}</div>
+</div>

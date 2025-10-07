@@ -12,11 +12,11 @@ import { HomeComponent } from './components/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import { CoworkcardComponent } from './components/coworkcard/coworkcard.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
 HomeComponent,
 CoworkcardComponent
   ],
@@ -28,7 +28,9 @@ CoworkcardComponent
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule,
+    NavbarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

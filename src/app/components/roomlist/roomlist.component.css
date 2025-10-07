@@ -99,3 +99,10 @@
   background-color: #13b047;
   transform: scale(1.05);
 }
+
+.room-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}

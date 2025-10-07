@@ -1,85 +1,52 @@
-.table-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  margin: 40px auto;
-  max-width: 90%;
+.container {
+  margin: 20px;
 }
 
-/* Titre aligné à droite */
-.table-header {
-  width: 80%;
-  text-align: right;
-  margin-bottom: 15px;
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.table-header h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.custom-table {
-  width: 80%;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.table th {
+  background-color: #f2f2f2;
+  text-align: left;
 }
 
-.custom-table thead {
-  background-color: #17cf54;
-  color: #fff;
-  text-align: center;
+.btn {
+  margin-right: 5px;
 }
 
-.custom-table th,
-.custom-table td {
-  vertical-align: middle;
-  text-align: center;
-  padding: 12px;
-}
-
-/* Boutons d'action */
-.btn-action {
+.btn-primary {
+  background-color: #007bff;
+  color: white;
   border: none;
-  padding: 6px 12px;
-  margin: 2px;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  padding: 5px 10px;
   cursor: pointer;
-  color: #fff;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-delete {
-  background-color: #e74c3c;
-}
-.btn-delete:hover {
-  background-color: #c0392b;
-}
-
-.btn-edit {
-  background-color: #f39c12;
-}
-.btn-edit:hover {
-  background-color: #d68910;
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-.btn-view {
-  background-color: #17cf54;
-}
-.btn-view:hover {
-  background-color: #13b047;
+.space-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 /* Bouton Ajouter un espace */
 .add-button-wrapper {
   width: 80%;
   margin-top: 20px;
-  text-align: right;
 }
 
 .btn-add {
@@ -98,4 +65,21 @@
 .btn-add:hover {
   background-color: #13b047;
   transform: scale(1.05);
+}
+.btn-view {
+  background-color: #17cf54;
+}
+.btn-view:hover {
+  background-color: #13b047;
+}
+
+.btn-action {
+  border: none;
+  padding: 6px 12px;
+  margin: 2px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
